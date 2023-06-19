@@ -1,0 +1,271 @@
+<!--
+/*
+ * Project:	    A-02 : HTML FORMS, VALIDATION AND SUBMISSION
+ * Author:	    Hoang Phuc Tran
+ * Student ID:  8789102
+ * Date:		    September 25, 2022
+ * Description: An application as part of an HTML file that will prompt the user to enter 
+ first and last name, street address, city, province, and postal code, then prompt the user to choose 
+  between being Student or Faculty. After Register button is pressed, the data on the form is first 
+  validated for completeness and content format and then submitted to the response page.
+ */
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SET Registration</title>
+    <style>
+      .checkBoxClass {
+        display: inline-block;
+        width: min-content;
+        white-space: nowrap;
+        text-align: left;
+      }
+
+      label {
+        display: inline-block;
+        text-align: left;
+        width: 150px;
+      }
+    </style>
+
+    <script src="main.js"></script>
+  </head>
+
+  <!--
+    This HTML code will display/prompt the user:
+    1. Get the first and last name
+    2. Get the street address
+    3. Get the city
+    4. Get the province
+    5. Get the postal code
+    6. Choose option between faculty and student
+    7. Get selecting optional select from the step 6
+  -->
+  <body>
+    <form
+      action="testRequest.asp"
+      method="get"
+      style="margin-left: 350px"
+      name="registerForm"
+    >
+      <h1 style="margin-left: 50px">Registration Forms</h1>
+
+      <div id="section1">
+        <label id="name">First and Last Name</label>
+        <input
+          id="nameText"
+          name="nameInput"
+          type="text"
+          style="width: 192px"
+        />
+        <i id="errorMessage1" style="color: red"></i>
+      </div>
+      <br />
+
+      <div id="section2">
+        <label id="streetAddress">Street Address</label>
+        <input
+          id="addressText"
+          name="addressInput"
+          type="text"
+          style="width: 192px"
+        />
+        <i id="errorMessage2" style="color: red"></i>
+      </div>
+      <br />
+
+      <div id="section3">
+        <label id="city">City</label>
+        <input
+          id="cityText"
+          name="cityInput"
+          type="text"
+          style="width: 192px"
+        />
+        <i id="errorMessage3" style="color: red"></i>
+      </div>
+      <br />
+
+      <div id="section4">
+        <label id="province">Province</label>
+        <select id="province1" name="provinceInput" style="width: 200px">
+          <option hidden disabled selected value id="blank"></option>
+          <option value="AB">Alberta</option>
+          <option value="BC">British Columbia</option>
+          <option value="MB">Manitoba</option>
+          <option value="NB">New Brunswick</option>
+          <option value="NL">Newfoundland and Labrador</option>
+          <option value="NT">Northwest Territories</option>
+          <option value="NS">Nova Scotia</option>
+          <option value="NU">Nunavut</option>
+          <option value="ON">Ontario</option>
+          <option value="PE">Prince Edward Island</option>
+          <option value="QC">Quebec</option>
+          <option value="SK">Saskatchewan</option>
+          <option value="YT">Yukon</option>
+        </select>
+        <i id="errorMessage5" style="color: red"></i>
+      </div>
+      <br />
+
+      <div id="section5">
+        <label id="postalCode">Postal Code</label>
+        <input
+          id="postalCodeText"
+          name="postalCodeInput"
+          type="text"
+          style="width: 192px"
+        />
+        <i id="errorMessage4" style="color: red"></i>
+      </div>
+      <br />
+
+      <div id="section6">
+        <label id="name" style="margin-left: 120px">Choose your option</label
+        ><br />
+        <div style="margin-top: 10px; margin-left: 100px">
+          <p id="errorMessage6" style="color: red"></p>
+        </div>
+        <input
+          type="radio"
+          value="Faculty"
+          name="optionButtons"
+          id="option1"
+          style="margin-top: 10px; margin-left: 110px"
+          onclick="checkRadioButtons()"
+        />Faculty
+        <input
+          type="radio"
+          value="Student"
+          name="optionButtons"
+          id="option2"
+          style="margin-left: 20px"
+          onclick="checkRadioButtons()"
+        />Student<br />
+
+        <div
+          class="checkBoxClass"
+          id="section6.1"
+          style="margin-left: 90px; display: none"
+        >
+          <label style="margin-top: 10px; margin-left: 40px"
+            >You can select:</label
+          >
+          <div>
+            <input
+              type="checkbox"
+              name="optionalSelect"
+              value="Teach in Engineering"
+              id="teach"
+              name="teachInEngineering"
+              style="margin-top: 5px"
+            />
+            <label>Teach in Engineering</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              name="optionalSelect"
+              value="Drive Car to Work"
+              id="drive"
+              name="driveCarToWork"
+              style="margin-top: 10px"
+            />
+            <label>Drive Car to Work</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              name="optionalSelect"
+              value="Bring Lunch"
+              id="lunch"
+              name="bringLunch"
+              style="margin-top: 10px"
+            />
+            <label>Bring Lunch</label>
+          </div>
+        </div>
+
+        <div
+          class="checkBoxClass"
+          id="section6.2"
+          style="margin-left: 90px; display: none"
+        >
+          <label style="margin-top: 10px; margin-left: 40px"
+            >You can select:</label
+          >
+          <div>
+            <input
+              type="checkbox"
+              name="optionalSelect"
+              value="Study in Information Technology"
+              id="study"
+              name="studyIT"
+              style="margin-top: 5px"
+            />
+            <label>Study in Information Technology</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              name="optionalSelect"
+              value="Own a Laptop Computer"
+              id="laptop"
+              name="ownLaptop"
+              style="margin-top: 10px"
+            />
+            <label>Own a Laptop Computer</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              name="optionalSelect"
+              value="Take Bus to School"
+              id="bus"
+              name="takeBus"
+              style="margin-top: 10px"
+            />
+            <label>Take Bus to School</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              name="optionalSelect"
+              value="Enjoys Web Design and Development"
+              id="enjoy"
+              name="enjoyWDD"
+              style="margin-top: 10px"
+            />
+            <label>Enjoys Web Design and Development</label>
+          </div>
+        </div>
+        <br />
+      </div>
+
+      <div style="margin-top: 30px; margin-left: 70px">
+        <i id="errorMessage7" style="color: red"></i>
+      </div>
+
+      <div style="margin-top: 30px" ;>
+        <input
+          class="buttonLeft"
+          id="buttonRe"
+          type="submit"
+          value="Register"
+          style="width: 100px; height: 30px; margin-left: 50px"
+          onclick="checkValidation();"
+        />
+
+        <input
+          class="buttonRight"
+          id="buttonCl"
+          type="button"
+          value="Clear Form"
+          style="width: 100px; height: 30px; margin-left: 60px"
+          onclick="clearForm()"
+        />
+      </div>
+    </form>
+  </body>
+</html>
