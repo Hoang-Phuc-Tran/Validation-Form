@@ -9,3 +9,4 @@ Description: An application as part of an HTML file that will prompt the user to
 street address, city, province, and postal code, then prompt the user to choose between being Student or 
 Faculty. After Register button is pressed, the data on the form is first validated for completeness and 
 content format and then submitted to the response page.
+
