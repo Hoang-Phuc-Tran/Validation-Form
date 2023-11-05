@@ -1,5 +1,5 @@
 
-![Capture22](https://github.com/Hoang-Phuc-Tran/Validation-Form/assets/120700092/b468114f-b0f9-48a9-a006-eef198eff18f)
+![260882821-b468114f-b0f9-48a9-a006-eef198eff18f](https://github.com/Hoang-Phuc-Tran/Validation-Form/assets/120700092/77cf9e27-e002-4f7d-8e35-ef54704edf9b)
 
 <h3 align="center">Project:	  HTML FORMS, VALIDATION AND SUBMISSION</h3>
 <br/>
